@@ -16,7 +16,7 @@ Tests cover:
   - Stat upgrades
 """
 
-import pytest
+from pytest import pytest
 from collections import Counter, defaultdict, deque
 from hero_rpg import Hero, Weapon, Item, Bag, WeaponType, ItemType
 
