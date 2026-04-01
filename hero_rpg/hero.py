@@ -155,7 +155,11 @@ class Hero:
         Record defeating an enemy.
         Counter accumulates each enemy type; no manual initialization needed.
         """
-        pass
+        self.kill_counter[enemy_type] += 1
+        self.combat_log.append(
+            f"{self.name} defeated a {enemy_type}"
+            f"(Total {enemy_type} kills: {self.kill_counter[enemy_type]})"
+        )
 
     def total_damage_potential(self) -> int:
         """Sum damage of all currently equipped weapons."""
@@ -178,3 +182,9 @@ class Hero:
             True if stat exists and was upgraded; False if key not found.
         """
         pass
+
+    def __repr__(self) -> str:
+        return (
+            f"Hero(name={self.name})"
+            f", class={self.hero_class}"
+            f", HP={self.health}/{self.max_health}")
